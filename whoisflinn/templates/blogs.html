@@ -1,0 +1,51 @@
+{% extends "bootstrap_responsive.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block body_content %}
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Who is Flinn?</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="/">Home</a></li>
+              <li class="active"><a href="#">Blog</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->          
+        </div>
+      </div>
+      <div class="hero-bar"></div>
+    </div>
+
+    <div class="container page">
+      
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <div class="hero-block" style="padding-right: 25px;">
+            <img src="../static/bootstrap/img/me.png" class="selfportrait"/>
+        </div>
+        <div class="hero-seperator"></div>    
+        <div class="hero-block" style="margin-top: -20px; padding-left: 55px;">
+            <h1>All Blogs</h1>
+
+            <h3>Recent Blogs:</h3>
+            {% for item in blogs %}
+              <a href="/blog/{{ item.id }}">{{ item.title }}</a> <-- Click to Read!<br/>
+            {% endfor %}
+        </div>
+      </div>
+
+      <br/>      
+      <footer>
+      <p style="float: right;/* Inline styles FTW! */">&copy; 2012 Matt Flinn</p>
+      </footer>
+
+    </div> <!-- /container -->
+{% endblock %}
