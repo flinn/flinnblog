@@ -1,1 +1,1 @@
-web: python whoisflinn/whoisflinn.py 
+web: gunicorn whoisflinn:app
