@@ -1,1 +1,1 @@
-web: gunicorn whoisflinn:app
+web: gunicorn whoisflinn\whoisflinn:app
