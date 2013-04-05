@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding=utf8
+import os
 from flask import Flask, render_template, request, make_response, g
 from functools import wraps
 from flask.ext.bootstrap import Bootstrap
