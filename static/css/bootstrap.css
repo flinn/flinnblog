@@ -16,6 +16,7 @@
 
  .highlighter {
   color: #FD8520;
+  font-weight: bold;
  }
 
  .hero-unit p > .pop {
@@ -74,6 +75,10 @@
   text-shadow: none;
   background-color: transparent;
   border: 0;
+}
+
+.bold-btn {
+  font-weight: bold;
 }
 
 .input-block-level {
@@ -279,7 +284,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: Georgia, Utopia, Palatino, 'Palatino Linotype', serif;
+  font-family: Arial,Helvetica,sans-serif;
   font-size: 16px;
   line-height: 20px;
   color: #FFFFFF;
