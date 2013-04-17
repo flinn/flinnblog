@@ -8,7 +8,8 @@ Models = models.BlogRepository()
 class BlogController:	
 
 	def Home(self):
-		return render_template('index.html')
+		blogs = Models.GetFeaturedBlogs()
+		return render_template('index.html', featuredBlogs=blogs)
 
 	def AllBlogs(self):
 		allBlogs = Models.AllBlogs()
@@ -22,5 +23,5 @@ class BlogController:
 		return render_template('about.html', aboutText=aboutMe)
 
 	def Blog(self, id):
-		blog = Models.GetBlog(blogId)
+		blog = Models.GetBlog(id)
 		return render_template('blog.html', blog=blog)

@@ -33,11 +33,9 @@
         </div>
         <div class="hero-seperator"></div>    
         <div class="hero-block" style="margin-top: -20px; padding-left: 55px;">
-            <h1>Blog</h1>
+            <h1>{{ blog.title }}</h1>
 
-            <h3>{{ blog.title }}</h3>
-
-            <p>{{ blog.text|safe }}</p>
+            <p>{{ blog.blog_text|safe }}</p>
         </div>
       </div>
 

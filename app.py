@@ -45,7 +45,7 @@ def allbogs():
 @app.route('/blog/<int:blogId>', methods=('GET', 'POST'))
 def blog(blogId):
     if blogId != 0:
-        return Contoller.Blog(blogId)
+        return Controller.Blog(blogId)
     
     return Controller.AllBlogs()
     

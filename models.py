@@ -1,40 +1,43 @@
 from flask import Flask, render_template, request, make_response, g
 import sqlite3
 
-DATABASE = 'whoisflinn.db'
+DATABASE = 'simpledata.db'
 app = Flask(__name__)
 app.config.from_object(__name__)
 
 def connect_db():
     return sqlite3.connect(app.config['DATABASE'])
 
+def ReadBlogsFromCursor(cursor):
+        blogs = [dict(id=row[0], title=row[1], description=row[2], blog_text=row[3], created_on=row[4], published_on=row[5], is_published=row[6], up_votes=row[7], down_votes=row[8], keywords=row[9], is_featured=row[10]) for row in cursor.fetchall()]
+        return blogs
+
 class BlogRepository:
     pass    
 
+    def GetFeaturedBlogs(self):
+        g.db = connect_db()
+        cur = g.db.execute('SELECT * FROM blogs WHERE is_featured = 1 ORDER BY published_on DESC')
+        blogs = ReadBlogsFromCursor(cur)
+        g.db.close()
+        return blogs
+
     def GetBlog(self, blogId):
-        exampleBlog1 = Blog()
-        exampleBlog1.title = 'Example Blog #1'
-        exampleBlog1.text = 'This is the example blog #1 text.'
-        exampleBlog1.description = ''
-        exampleBlog1.id = 10
 
-        exampleBlog2 = Blog()
-        exampleBlog2.title = 'Totally Different #2'
-        exampleBlog2.text = 'The quick brown blog#2 fox jumped <i>over</i> the lazy log.'
-        exampleBlog2.description = ''
-        exampleBlog2.id = 11
-
-        if blogId == 1:
-            return exampleBlog1
-        if blogId == 2:
-            return exampleBlog2
+        g.db = connect_db()
+        cur = g.db.execute('SELECT * FROM blogs WHERE id = ' + str(blogId))
+        blog = ReadBlogsFromCursor(cur)
+        g.db.close()
+        return blog
 
     def AllBlogs(self):
         g.db = connect_db()
         cur = g.db.execute('SELECT * FROM blogs')
-        blogs = [dict(id=row[0], title=row[1]) for row in cur.fetchall()]
+        blogs = ReadBlogsFromCursor(cur)
         g.db.close()
         return blogs
+
+    
 
 class Blog:
     pass
