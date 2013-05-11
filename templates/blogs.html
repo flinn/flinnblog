@@ -2,6 +2,7 @@
 {% import "bootstrap_wtf.html" as wtf %}
 
 {% block body_content %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -14,7 +15,7 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="/">Home</a></li>
-              <li class="active"><a href="#">Blog</a></li>
+              <li class="active"><a href="/blog/all">Blog</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
@@ -41,8 +42,7 @@
             {% endfor %}
         </div>
       </div>
-
-      <br/>      
+ 
       <footer>
       <p style="float: right;/* Inline styles FTW! */">&copy; 2012 Matt Flinn</p>
       </footer>

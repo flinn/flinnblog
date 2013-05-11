@@ -23,6 +23,17 @@
   font-weight: bold;
  }
 
+ .bold-btn {
+  font-weight: bold;
+  text-shadow: 1px 1px 1px Black;
+  color: White !important;
+}
+
+ .hero-unit a:hover {
+  color: #F92672;
+  text-decoration: none;
+ }
+
 .big-thought {
   color: #2A333C;
 }
@@ -77,11 +88,6 @@
   border: 0;
 }
 
-.bold-btn {
-  font-weight: bold;
-  text-shadow: 1px 1px 1px Black;
-}
-
 .input-block-level {
   display: block;
   width: 100%;
@@ -89,6 +95,11 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+footer {
+  display: block;
+  padding-top: 10px;
 }
 
 article,
@@ -126,11 +137,13 @@ a:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+  color: #F92672;
 }
 
 a:hover,
 a:active {
   outline: 0;
+  color: #F92672;
 }
 
 sub,
@@ -3365,14 +3378,16 @@ button.close {
 .btn.active,
 .btn.disabled,
 .btn[disabled] {
-  color: #333333;
-  background-color: #e6e6e6;
-  *background-color: #d9d9d9;
+  color: White !important; 
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75) !important; 
+  background-color: #F92672;
+  *background-color: #F92672;
 }
 
 .btn:active,
 .btn.active {
   background-color: #cccccc \9;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
 
 .btn:first-child {
@@ -3383,6 +3398,7 @@ button.close {
 .btn:focus {
   color: #333333;
   text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
      -moz-transition: background-position 0.1s linear;

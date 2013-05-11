@@ -45,16 +45,14 @@
         </div>
       </div>
 
-       <div class="row" style="margin-left: -20px;"> 
-        {% if known %}     
+      {% if known %}     
+        <div class="row" style="margin-left: -20px;"> 
           <p style="color: Green">{{ aboutText }}</p>
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}      
 
-      <br/>      
       <footer>
       <p style="float: right;/* Inline styles FTW! */">&copy; 2012 Matt Flinn</p>
       </footer>
-
     </div> <!-- /container -->
 {% endblock %}
